@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { print } from "graphql/language/printer";
-
-import { setSeoData } from "@/utils/seoData";
-
-import { fetchGraphQL } from "@/utils/fetchGraphQL";
+import { setSeoData } from "@/utils/seo-data";
+import { fetchGraphQL } from "@/utils/fetch-graphql";
 import { ContentNode, Page } from "@/gql/graphql";
 import { PageQuery } from "@/components/Templates/Page/PageQuery";
-import { SeoQuery } from "@/queries/general/SeoQuery";
+import { SeoQuery } from "@/queries/general/seo-query";
 
 const notFoundPageWordPressId = 11;
 

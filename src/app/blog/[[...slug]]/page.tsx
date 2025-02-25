@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { print } from "graphql/language/printer";
-
-import { setSeoData } from "@/utils/seoData";
-
-import { fetchGraphQL } from "@/utils/fetchGraphQL";
-import { ContentInfoQuery } from "@/queries/general/ContentInfoQuery";
+import { setSeoData } from "@/utils/seo-data";
+import { fetchGraphQL } from "@/utils/fetch-graphql";
+import { ContentInfoQuery } from "@/queries/general/content-info-query";
 import { ContentNode } from "@/gql/graphql";
 import PageTemplate from "@/components/Templates/Page/PageTemplate";
-import { nextSlugToWpSlug } from "@/utils/nextSlugToWpSlug";
+import { nextSlugToWpSlug } from "@/utils/convert-slug";
 import PostTemplate from "@/components/Templates/Post/PostTemplate";
-import { SeoQuery } from "@/queries/general/SeoQuery";
+import { SeoQuery } from "@/queries/general/seo-query";
 
 type Props = {
   params: Promise<{ slug: string }>;

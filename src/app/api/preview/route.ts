@@ -1,7 +1,7 @@
 import { print } from "graphql/language/printer";
 
 import { ContentNode, LoginPayload } from "@/gql/graphql";
-import { fetchGraphQL } from "@/utils/fetchGraphQL";
+import { fetchGraphQL } from "@/utils/fetch-graphql";
 import { draftMode } from "next/headers";
 import { NextResponse } from "next/server";
 import gql from "graphql-tag";

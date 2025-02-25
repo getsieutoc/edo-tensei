@@ -4,7 +4,7 @@ import { print } from "graphql/language/printer";
 import styles from "./Navigation.module.css";
 
 import { MenuItem, RootQueryToMenuItemConnection } from "@/gql/graphql";
-import { fetchGraphQL } from "@/utils/fetchGraphQL";
+import { fetchGraphQL } from "@/utils/fetch-graphql";
 import gql from "graphql-tag";
 
 async function getData() {

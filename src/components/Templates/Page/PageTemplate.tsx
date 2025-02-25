@@ -1,6 +1,6 @@
 import { print } from "graphql/language/printer";
 import { ContentNode, Page } from "@/gql/graphql";
-import { fetchGraphQL } from "@/utils/fetchGraphQL";
+import { fetchGraphQL } from "@/utils/fetch-graphql";
 import { PageQuery } from "./PageQuery";
 
 interface TemplateProps {

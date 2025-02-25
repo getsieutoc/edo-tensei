@@ -1,7 +1,7 @@
 import { print } from "graphql/language/printer";
 
 import { ContentNode, Post } from "@/gql/graphql";
-import { fetchGraphQL } from "@/utils/fetchGraphQL";
+import { fetchGraphQL } from "@/utils/fetch-graphql";
 
 import styles from "./PostTemplate.module.css";
 import { PostQuery } from "./PostQuery";

@@ -6,9 +6,10 @@
     "watch": "trap 'exit 0' SIGINT; concurrently --raw --kill-others pnpm:dev:*",
     "dev:next": "pnpm run codegen && next dev --turbo",
     "build": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js && next build",
+    "codegen": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js",
     "start": "next start",
-    "lint": "next lint",
-    "codegen": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js"
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint"
   },
   "dependencies": {
     "graphql": "^16.9.0",
