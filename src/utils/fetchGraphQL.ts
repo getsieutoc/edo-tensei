@@ -5,7 +5,7 @@ export async function fetchGraphQL<T = any>(
   variables?: { [key: string]: any },
   headers?: { [key: string]: string },
 ): Promise<T> {
-  const { isEnabled: preview } = draftMode();
+  const { isEnabled: preview } = await draftMode();
 
   try {
     let authHeader = "";

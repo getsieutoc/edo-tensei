@@ -1,7 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js && next dev",
+    "clean": "rimraf node_modules dist .next && pnpm install",
+    "dev": "docker compose up -d && pnpm run watch && docker compose stop",
+    "watch": "trap 'exit 0' SIGINT; concurrently --raw --kill-others pnpm:dev:*",
+    "dev:next": "pnpm run codegen && next dev --turbo",
     "build": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js && next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,8 +24,15 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.1.2",
     "eslint": "^9",
     "eslint-config-next": "latest",
+    "rimraf": "^6.0.1",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }

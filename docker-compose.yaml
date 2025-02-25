@@ -1,0 +1,36 @@
+name: edo-tensei
+
+services:
+  wordpress:
+    container_name: edo-tensei-wordpress
+    image: wordpress:latest
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./wp_data:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=database
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+
+  database:
+    container_name: edo-tensei-database
+    image: mariadb:10.6.4-focal
+    command: "--default-authentication-plugin=mysql_native_password"
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=somewordpress
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    expose:
+      - 3306
+      - 33060
+
+volumes:
+  wp_data:
+  db_data:
