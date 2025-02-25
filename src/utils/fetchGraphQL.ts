@@ -10,7 +10,7 @@ export async function fetchGraphQL<T = any>(
   try {
     let authHeader = "";
     if (preview) {
-      const auth = cookies().get("wp_jwt")?.value;
+      const auth = (await cookies()).get("wp_jwt")?.value;
       if (auth) {
         authHeader = `Bearer ${auth}`;
       }
