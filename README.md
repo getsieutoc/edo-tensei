@@ -15,6 +15,12 @@ Built on top of `cms-wordpress` [example](https://github.com/vercel/next.js/tree
 
 ## How to use
 
+### Clone the project
+
+```
+pnpm dlx tiged getsieutoc/edo-tensei your-project
+```
+
 ## Configuration
 
 ### WordPress
